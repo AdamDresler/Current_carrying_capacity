@@ -25,19 +25,23 @@ public class CurrentCapacity {
      * @param A -  coefficient
      * @param s - cable cross section
      * @param m - the exponent depends on the type of cable
-     *          <p>
-     *          PN-HD 60364-5-52: 2011 laying cables A-C and E, this pattern is current
+     *
+     * PN-HD 60364-5-52: 2011 laying cables A-C and E, this pattern is current
      */
     private static double formulaCurrentCapacity(double A, double s, double m) {
         return A * Math.pow(s, m);
     }
 
     /**
+     * Current carrying capacity for cable laying
+     * @param cableMaterial cooper CU / aluminium AL
+     * @param crossSection cable cross section
+     */
+
+    /*
      * Cable laying A1 for two wires of the cable are loaded in PVC insulation
      * IEC 60364-5-523 table 52-C1 col. 2
      * IEC 60364-5-52 table B.52.2 col. 2
-     *
-     * @param cableMaterial cooper, aluminium
      */
     public static double Idd_A1_PVC1(int cableMaterial, double crossSection) {
         double Icc = 0.0;
@@ -54,12 +58,10 @@ public class CurrentCapacity {
         return Round(Icc);
     }
 
-    /**
+    /*
      * Cable laying A1 for two wires of the cable are loaded in PVC insulation
      * IEC 60364-5-523 table 52-C3 col. 2
      * IEC 60364-5-52 table B.52.4  col. 2
-     *
-     * @param cableMaterial cooper, aluminium
      */
     public static double Idd_A1_PVC3(int cableMaterial, double crossSection) {
         double Icc = 0.0;
@@ -76,12 +78,10 @@ public class CurrentCapacity {
         return Round(Icc);
     }
 
-    /**
+    /*
      * Cable laying A1 for two wires of the cable are loaded in XLPE insulation
      * IEC 60364-5-523 table 52-C2 col. 2
      * IEC 60364-5-52 table B.52.3 col. 2
-     *
-     * @param cableMaterial cooper, aluminium
      */
     public static double Idd_A1_XLPE1(int cableMaterial, double crossSection) {
         double Icc = 0.0;
@@ -98,12 +98,10 @@ public class CurrentCapacity {
         return Round(Icc);
     }
 
-    /**
+    /*
      * Cable laying A1 for two wires of the cable are loaded in XLPE insulation
      * IEC 60364-5-523 table 52-C4 col. 2
      * IEC 60364-5-52 table B.52.5  col. 2
-     *
-     * @param cableMaterial cooper, aluminium
      */
     public static double Idd_A1_XLPE3(int cableMaterial, double crossSection) {
         double Icc = 0.0;
@@ -120,12 +118,10 @@ public class CurrentCapacity {
         return Round(Icc);
     }
 
-    /**
+    /*
      * Cable laying A2 for two wires of the cable are loaded in PVC insulation
      * IEC 60364-5-523 table 52-C1 col. 3
      * IEC 60364-5-52 table B.52.2 col. 3
-     *
-     * @param cableMaterial cooper, aluminium
      */
     public static double Idd_A2_PVC1(int cableMaterial, double crossSection) {
         double Icc = 0.0;
