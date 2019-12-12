@@ -1,6 +1,6 @@
 public class CurrentCapacity {
 
-    public static double Round(double value) {
+    private static double Round(double value) {
         if (value > 20.0) {
             value = Math.round((value * 10.0) / 10.0);
         } else {
