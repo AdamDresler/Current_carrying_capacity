@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Current_carrying_capacity.iml" filepath="$PROJECT_DIR$/Current_carrying_capacity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/current-carrying-capacity.iml" filepath="$PROJECT_DIR$/current-carrying-capacity.iml" />
     </modules>
   </component>
 </project>
