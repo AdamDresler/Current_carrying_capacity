@@ -5,22 +5,23 @@
 
 
 public class Round {
-    public static double Round05(double x){
-        int x1 =  (int) x;
-        double y = x - x1;
-        if(y <= 0.25){
-            y = 0.0;
-        } else if (y <= 0.75){
-            y = 0.5;
-        }else if (y > 0.75){
-            y=1.0;
-        }
 
-        return x1 + y;
-    }
-    public static double Round10(double x){
-        x = Math.round(x*10.0)/10.0;
-        return x;
+    public static double Round10(double value) {
+        if (value > 20.0) {
+            value = Math.round((value * 10.0) / 10.0);
+        } else {
+            int x = (int) value;
+            double y = value - x;
+            if (y <= 0.25) {
+                y = 0.0;
+            } else if (y <= 0.75) {
+                y = 0.5;
+            } else if (y > 0.75) {
+                y = 1.0;
+            }
+            value = x + y;
+        }
+        return value;
     }
 
     public static double Round100(double x){

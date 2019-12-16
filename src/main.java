@@ -3,13 +3,18 @@ public class main {
         String laying = "A1";
         String insulation = "PVC";
         int numberOfPhases = 0;
-        int cableMaterial =0;
+        int cableMaterial =1;
         double crossSection = 6.0;
 
         double res = getIcc(laying, insulation, numberOfPhases, cableMaterial, crossSection);
 
         System.out.println(res);
         System.out.println(is1phase(numberOfPhases));
+
+        double d = new CurrentCapacityByIEC().Icc_D1_XLPE3(cableMaterial, crossSection);
+
+
+        System.out.println("D1: " + d);
     }
 
     public static boolean is1phase(int pos) {
@@ -27,19 +32,20 @@ public class main {
             if (insulation.equals("PVC")) {
                 switch (laying) {
                     case "A1":
-                        Icc = CurrentCapacityByIEC.Iz_A1_PVC1(cableMaterial, crossSection);
+                        Icc = CurrentCapacityByIEC.Icc_A1_PVC1(cableMaterial, crossSection);
                         break;
                     case "A2":
-                        Icc = CurrentCapacityByIEC.Iz_A2_PVC1(cableMaterial, crossSection);
+                        Icc = CurrentCapacityByIEC.Icc_A2_PVC1(cableMaterial, crossSection);
                         break;
                 }
             }else{
                 switch (laying) {
                     case "A1":
-                        Icc = CurrentCapacityByIEC.Iz_A1_XLPE1(cableMaterial, crossSection);
+                        Icc = CurrentCapacityByIEC.Icc_A1_XLPE1(cableMaterial, crossSection);
                         break;
                     case "A2":
-                        Icc = CurrentCapacityByIEC.Iz_A2_XLPE1(cableMaterial, crossSection);break;
+                        Icc = CurrentCapacityByIEC.Icc_A2_XLPE1(cableMaterial, crossSection);break;
+
                 }
 
             }
@@ -48,10 +54,10 @@ public class main {
             if (insulation.equals("PVC")) {
                 switch (laying) {
                     case "A1":
-                        Icc = CurrentCapacityByIEC.Iz_A1_PVC3(cableMaterial, crossSection);
+                        Icc = CurrentCapacityByIEC.Icc_A1_PVC3(cableMaterial, crossSection);
                         break;
                     case "A2":
-                        Icc = CurrentCapacityByIEC.Iz_A2_PVC3(cableMaterial, crossSection);
+                        Icc = CurrentCapacityByIEC.Icc_A2_PVC3(cableMaterial, crossSection);
                         break;
                 }
             }else{

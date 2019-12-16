@@ -816,11 +816,6 @@ public class old {
     public void IddResult1() {
 
 
-        if (Idd1 > 20.0) {
-            Idd1 = Math.round(Idd1);
-        } else {
-            Idd1 = Round.Round05(Idd1);
-        }
 
         Idd1 = Idd1 * kTemp * kBundle * fGroundRes;
         Idd1 = Round.Round10(Idd1);
