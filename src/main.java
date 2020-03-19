@@ -1,72 +1,31 @@
 public class main {
     public static void main(String[] args) {
-        String laying = "A1";
-        String insulation = "PVC";
-        int numberOfPhases = 0;
-        int cableMaterial =1;
-        double crossSection = 6.0;
-
-        double res = getIcc(laying, insulation, numberOfPhases, cableMaterial, crossSection);
-
-        System.out.println(res);
-        System.out.println(is1phase(numberOfPhases));
-
-        double d = new CurrentCapacityByIEC().Icc_D1_XLPE3(cableMaterial, crossSection);
 
 
-        System.out.println("D1: " + d);
-    }
+        Cable cable = new Cable();
+        cable.setType("YKYżo");
+        cable.setInsulation("XLPE");
+        cable.setWiresMaterial("AL");
+        cable.setCrossSection(1.5);
+        cable.setNumberOfWires(2);
 
-    public static boolean is1phase(int pos) {
-        boolean result = true;
-        if (pos > 0) {
-            return false;
-        }
-        return result;
+        String laying = "G horizontal";
+        int numberOfPhases = 3;
+        double ambientTemperature = 25.0;
+
+
+        double res = IEC_CableCurrentCapacity.getIcc(laying, cable.getInsulation(), numberOfPhases, cable.getWiresMaterial(), cable.getCrossSection());
+        System.out.println(cable.getType() + " -  " + cable.getInsulation()+ "/"+cable.getWiresMaterial()+" - " + laying + "/"+ numberOfPhases+ " : " + cable.getCrossSection()+"mm2 / " + res + "A");
+
+        double ambientFactor = IEC_CableCorrectionFactors.ambietTempFactor(laying,ambientTemperature,cable.getInsulation());
+        System.out.println(ambientFactor);
+
     }
 
 
-    public static double getIcc(String laying, String insulation, int numberOfPhases, int cableMaterial, double crossSection) {
-        double Icc = 0.0;
-        if (is1phase(numberOfPhases)) {
-            if (insulation.equals("PVC")) {
-                switch (laying) {
-                    case "A1":
-                        Icc = CurrentCapacityByIEC.Icc_A1_PVC1(cableMaterial, crossSection);
-                        break;
-                    case "A2":
-                        Icc = CurrentCapacityByIEC.Icc_A2_PVC1(cableMaterial, crossSection);
-                        break;
-                }
-            }else{
-                switch (laying) {
-                    case "A1":
-                        Icc = CurrentCapacityByIEC.Icc_A1_XLPE1(cableMaterial, crossSection);
-                        break;
-                    case "A2":
-                        Icc = CurrentCapacityByIEC.Icc_A2_XLPE1(cableMaterial, crossSection);break;
 
-                }
 
-            }
 
-        } else {
-            if (insulation.equals("PVC")) {
-                switch (laying) {
-                    case "A1":
-                        Icc = CurrentCapacityByIEC.Icc_A1_PVC3(cableMaterial, crossSection);
-                        break;
-                    case "A2":
-                        Icc = CurrentCapacityByIEC.Icc_A2_PVC3(cableMaterial, crossSection);
-                        break;
-                }
-            }else{
-                //TODO
-            }
-
-        }
-        return Icc;
-    }
 }
 
 

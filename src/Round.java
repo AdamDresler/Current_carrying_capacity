@@ -6,7 +6,12 @@
 
 public class Round {
 
-    public static double Round10(double value) {
+    /**
+     * Special round value for Current Capacity Value
+     * @param value
+     * @return rounded value
+     */
+    public static double Round05(double value) {
         if (value > 20.0) {
             value = Math.round((value * 10.0) / 10.0);
         } else {
@@ -22,6 +27,11 @@ public class Round {
             value = x + y;
         }
         return value;
+    }
+
+    public static double Round10(double x){
+        x = Math.round(x*10.0)/10.0;
+        return x;
     }
 
     public static double Round100(double x){
