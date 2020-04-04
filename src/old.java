@@ -6,7 +6,7 @@ public class old {
 
     /*
      * Obliczenia oparto o norme PN IEC 60364-5-523
-     * Wzoryy na obciążakność pochodzą z ww normy
+     * Wzory na obciążakność pochodzą z ww normy
      * Aktualizacja do normy PN HD 60364-5-52:2011
      */
     double Idd1;
@@ -785,10 +785,9 @@ public class old {
             }
             // A-B
             else {
-                switch (posDisposeBundle) {
-                    case 0:
-                        kBundle = t1[posNumberOfCables];
-                        break; //Table 52-E1 poz. 1
+                if (posDisposeBundle == 0) {
+                    kBundle = t1[posNumberOfCables];
+                    //Table 52-E1 poz. 1
                 }
             }
 

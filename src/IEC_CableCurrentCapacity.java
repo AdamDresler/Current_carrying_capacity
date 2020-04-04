@@ -1106,7 +1106,8 @@ public class IEC_CableCurrentCapacity {
                     case "C":
                         Icc = Icc_C_PVC1(wiresMaterial, crossSection);
                         break;
-                    case "D1":
+                    case "D1 single-core":
+                    case "D1 multicore":
                         Icc = new IEC_CableCurrentCapacity().Icc_D1_PVC1(wiresMaterial, crossSection);
                         break;
                     case "D2":
@@ -1136,7 +1137,8 @@ public class IEC_CableCurrentCapacity {
                     case "C":
                         Icc = Icc_C_XLPE1(wiresMaterial, crossSection);
                         break;
-                    case "D1":
+                    case "D1 single-core":
+                    case "D1 multicore":
                         Icc = new IEC_CableCurrentCapacity().Icc_D1_XLPE1(wiresMaterial, crossSection);
                         break;
                     case "D2":
@@ -1168,7 +1170,8 @@ public class IEC_CableCurrentCapacity {
                     case "C":
                         Icc = Icc_C_PVC3(wiresMaterial, crossSection);
                         break;
-                    case "D1":
+                    case "D1 single-core":
+                    case "D1 multicore":
                         Icc = new IEC_CableCurrentCapacity().Icc_D1_PVC3(wiresMaterial, crossSection);
                         break;
                     case "D2":
@@ -1207,7 +1210,8 @@ public class IEC_CableCurrentCapacity {
                     case "C":
                         Icc = Icc_C_XLPE3(wiresMaterial, crossSection);
                         break;
-                    case "D1":
+                    case "D1 single-core":
+                    case "D1 multicore":
                         Icc = new IEC_CableCurrentCapacity().Icc_D1_XLPE3(wiresMaterial, crossSection);
                         break;
                     case "D2":
